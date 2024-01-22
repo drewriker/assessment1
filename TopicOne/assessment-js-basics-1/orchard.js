@@ -48,10 +48,15 @@ const pinkPrice = .55
 
     Log `totalAcres` to the console.
 */
+let totalAcres = 0
 
-// CODE HERE
+for (let i = 0; i < fujiAcres.length; i++) {
+    totalAcres += fujiAcres[i];
+    totalAcres += galaAcres[i];
+    totalAcres += pinkAcres[i]
+}
 
-
+console.log(totalAcres)
 
 
 
@@ -67,9 +72,9 @@ const pinkPrice = .55
     Log `averageDailyAcres` to the console.
 */
 
-// CODE HERE
+let averageDailyAcres = totalAcres / 7;
 
-
+console.log(averageDailyAcres)
 
 
 
@@ -105,8 +110,11 @@ const pinkPrice = .55
 let acresLeft = 174 
 let days = 0
 
-// CODE HERE
-
+while (acresLeft > 0) {
+    days++
+    acresLeft -= averageDailyAcres
+}
+console.log(days)
 
 
 // PROBLEM 4
@@ -133,15 +141,19 @@ let days = 0
     values to the new arrays.
 */
 
-// CODE HERE
+let fujiTons = []
+let galaTons = []
+let pinkTons = []
 
-// let fujiTons =
-// let galaTons =
-// let pinkTons =
+for (let i = 0; i < fujiAcres.length; i++) {
+    fujiTons.push(fujiAcres[i]*6.5);
+    galaTons.push(galaAcres[i]*6.5);
+    pinkTons.push(pinkAcres[i]*6.5);
+}
 
-
-
-
+console.log(fujiTons);
+console.log(galaTons);
+console.log(pinkTons);
 
 
 // PROBLEM 5
@@ -160,13 +172,19 @@ let days = 0
     Hint: there are 2000 pounds in a ton.
 */
 
-// CODE HERE 
+let fujiPounds = 0
+let galaPounds = 0
+let pinkPounds = 0
 
-// let fujiPounds =
-// let galaPounds =
-// let pinkPounds =
+for (let i = 0; i < fujiTons.length; i++) {
+    fujiPounds += fujiTons[i] * 2000;
+    galaPounds += galaTons[i] * 2000;
+    pinkPounds += pinkTons[i] * 2000;
+}
 
-
+console.log(fujiPounds)
+console.log(galaPounds)
+console.log(pinkPounds)
 
 
 
@@ -187,15 +205,13 @@ let days = 0
     console. 
 */
 
-// CODE HERE
+let fujiProfit = fujiPounds * fujiPrice
+let galaProfit = galaPounds * galaPrice
+let pinkProfit = pinkPounds * pinkPrice
 
-// let fujiProfit =
-// let galaProfit =
-// let pinkProfit =
-
-
-
-
+console.log(fujiProfit);
+console.log(galaProfit);
+console.log(pinkProfit);
 
 
 // PROBLEM 7
@@ -208,4 +224,6 @@ let days = 0
     Log `totalProfit` to the console.
 */
 
-// CODE HERE
+let totalProfit = fujiProfit + galaProfit + pinkProfit;
+
+console.log(totalProfit);
