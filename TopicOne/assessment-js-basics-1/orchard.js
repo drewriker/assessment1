@@ -50,12 +50,14 @@ const pinkPrice = .55
 */
 let totalAcres = 0
 
+// loop to get total acres for each type
 for (let i = 0; i < fujiAcres.length; i++) {
     totalAcres += fujiAcres[i];
     totalAcres += galaAcres[i];
     totalAcres += pinkAcres[i]
 }
 
+// print to console
 console.log(totalAcres)
 
 
@@ -72,8 +74,10 @@ console.log(totalAcres)
     Log `averageDailyAcres` to the console.
 */
 
+// got average from total acres / number of days
 let averageDailyAcres = totalAcres / 7;
 
+// print to console
 console.log(averageDailyAcres)
 
 
@@ -107,13 +111,17 @@ console.log(averageDailyAcres)
 
 */
 
+// given variables
 let acresLeft = 174 
 let days = 0
 
+// while loop adding 1 to days so we get total number of days until all acres harvested
 while (acresLeft > 0) {
     days++
     acresLeft -= averageDailyAcres
 }
+
+// print to console
 console.log(days)
 
 
@@ -141,16 +149,20 @@ console.log(days)
     values to the new arrays.
 */
 
+
+//initialized arrays for problem
 let fujiTons = []
 let galaTons = []
 let pinkTons = []
 
+//used loop to get total tons added to the arrays
 for (let i = 0; i < fujiAcres.length; i++) {
     fujiTons.push(fujiAcres[i]*6.5);
     galaTons.push(galaAcres[i]*6.5);
     pinkTons.push(pinkAcres[i]*6.5);
 }
 
+//print total to console
 console.log(fujiTons);
 console.log(galaTons);
 console.log(pinkTons);
@@ -171,17 +183,18 @@ console.log(pinkTons);
 
     Hint: there are 2000 pounds in a ton.
 */
-
+//initialize the variables
 let fujiPounds = 0
 let galaPounds = 0
 let pinkPounds = 0
 
+//getting the pound conversion by using the length of array to add to the pound variables
 for (let i = 0; i < fujiTons.length; i++) {
     fujiPounds += fujiTons[i] * 2000;
     galaPounds += galaTons[i] * 2000;
     pinkPounds += pinkTons[i] * 2000;
 }
-
+//printing totals to console
 console.log(fujiPounds)
 console.log(galaPounds)
 console.log(pinkPounds)
@@ -205,10 +218,11 @@ console.log(pinkPounds)
     console. 
 */
 
+//Getting the profit for each apple type by multiplying the price/pound the total pounds
 let fujiProfit = fujiPounds * fujiPrice
 let galaProfit = galaPounds * galaPrice
 let pinkProfit = pinkPounds * pinkPrice
-
+//printing totals to the console
 console.log(fujiProfit);
 console.log(galaProfit);
 console.log(pinkProfit);
